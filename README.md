@@ -1,0 +1,1 @@
+# go-proj-self
