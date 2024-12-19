@@ -30,7 +30,8 @@ type MovieData struct { //定义结构体
 	Quote    string `json:"quote"`
 }
 
-func main() {
+// 运行的时候改回main
+func doubanmain() {
 	InitDB()
 
 	for i := 0; i < 10; i++ {

@@ -10,15 +10,16 @@ import (
 	"strings"
 )
 
-var DB *sql.DB
-
-const (
-	USERNAME = "root"
-	PASSWORD = "shr040726cc"
-	HOST     = "127.0.0.1"
-	PORT     = "3306"
-	DBNAME   = "library"
-)
+//跑的时候改回来
+//var DB *sql.DB
+//
+//const (
+//	USERNAME = "root"
+//	PASSWORD = "shr040726cc"
+//	HOST     = "127.0.0.1"
+//	PORT     = "3306"
+//	DBNAME   = "library"
+//)
 
 type BookData struct {
 	Title   string
@@ -28,7 +29,8 @@ type BookData struct {
 	Status  string
 }
 
-func main() {
+// 运行的时候改回main
+func librarymain() {
 	initDB()
 
 	for i := 0; i < 50; i++ {
@@ -127,7 +129,7 @@ func spider(page string) {
 				//fmt.Println(bookdata.Rating)
 				//fmt.Println(bookdata.Price)
 				//fmt.Println(bookdata.Status)
-				if InsertData(bookdata) {
+				if InserttoData(bookdata) {
 
 				} else {
 					fmt.Println("插入失败")
@@ -151,7 +153,7 @@ func initDB() {
 	fmt.Println("connect success")
 }
 
-func InsertData(bookdata BookData) bool {
+func InserttoData(bookdata BookData) bool {
 	tx, err := DB.Begin()
 	if err != nil {
 		fmt.Println("Begin Err:", err)
